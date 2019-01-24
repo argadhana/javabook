@@ -21,3 +21,5 @@ Route::get('/admin', function ()
 });
 Route::resource('/admin/dashboard','BerandaController');
 Route::resource('/admin/buku','BukuController');
+Route::resource('/admin/jenis','JenisController');
+Route::resource('/admin/genre','GenreController');
