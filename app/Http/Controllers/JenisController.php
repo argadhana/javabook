@@ -26,7 +26,8 @@ class JenisController extends Controller
 	 */
 	public function create()
 	{
-		return view('admin.jenis.form');
+		$header = "Tambah";
+		return view('admin.jenis.form',compact('header'));
 	}
 
 	/**
@@ -69,8 +70,9 @@ class JenisController extends Controller
 	 */
 	public function edit($id)
 	{
+		$header = "Edit";
 		$data = Jenis_buku::findOrFail($id);
-		return view('admin.jenis.form', compact('data'));
+		return view('admin.jenis.form', compact('data','header'));
 	}
 
 	/**

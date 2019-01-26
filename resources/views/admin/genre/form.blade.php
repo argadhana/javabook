@@ -1,5 +1,7 @@
 @extends('admin.templat.index')
-@section('title','Form Genre Buku')
+@section('title')
+	{{$header}} Genre Buku
+@endsection
 @section('panel-link')
 	<li>Data Genre Buku</li>
 @endsection

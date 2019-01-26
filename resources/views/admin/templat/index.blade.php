@@ -126,11 +126,11 @@
 		</div>
 		<div class="divider"></div>
 		<ul class="nav menu">
-			<li><a href="{{route('dashboard.index')}}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+			<li class="{{(request()->is('admin/dashboard*')) ? 'active' : ''}}"><a href="{{route('dashboard.index')}}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li class="parent ">
 				<a data-toggle="collapse" href="#master-data"><em class="fa fa-pencil">&nbsp;</em> Master Data <span data-toggle="collapse" href="#master-data" class="icon pull-right"><em class="fa fa-plus"></em></span></a>
 				<ul class="children collapse" id="master-data">
-					<li>
+					<li class="active">
 						<a href="{{route('jenis.index')}}"><span class="fa fa-minus">&nbsp;</span> Jenis Buku</a>
 					</li>
 					<li>
@@ -196,12 +196,12 @@
 			$('.datatable').DataTable();
 			$('.money').mask('#.##0', {reverse: true});
 		});
-		$(function () {
-			$('ul li a').filter(function(){return this.href==location.href}).parent().addClass('active').siblings().removeClass('active')
-			$('ul li a').click(function(){
-				$(this).parent().addClass('active').siblings().removeClass('active')	
-			})
-		});
+		// $(function () {
+		// 	$('ul li a').filter(function(){return this.href==location.href}).parent().addClass('active').siblings().removeClass('active')
+		// 	$('ul li a').click(function(){
+		// 		$(this).parent().addClass('active').siblings().removeClass('active')	
+		// 	})
+		// });
 		$('.datepicker').datepicker({
 			format: 'yyyy/mm/dd',
 		});

@@ -26,7 +26,8 @@ class GenreController extends Controller
 	 */
 	public function create()
 	{
-		return view('admin.genre.form');
+		$header = "Tambah";
+		return view('admin.genre.form',compact('header'));
 	}
 
 	/**
@@ -69,8 +70,9 @@ class GenreController extends Controller
 	 */
 	public function edit($id)
 	{
+		$header = "Edit";
 		$data = Genre::find($id);
-		return view('admin.genre.form',compact('data'));
+		return view('admin.genre.form',compact('data','header'));
 	}
 
 	/**
