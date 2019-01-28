@@ -1,119 +1,72 @@
-@extends('admin.templat.index')
+@extends('admin.template.index')
 @section('title', 'Data Buku')
-@section('panel-link')
-    <li>Data Buku</li>
-@endsection
 @section('main')
 <div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
-            <div class="panel-heading"> 
-                <a href="{{url('admin/buku/create')}}" class="btn btn-primary pull-right"><em class="fa fa-plus"></em> Tambah</a>
-            </div>
-            <div class="panel-body">
-                <table class="table table-bordered table-hover datatable table-responsive">
-                    <thead>
-                        <tr>
-                            <th>Item ID</th>
-                            <th>Item Name</th>
-                            <th>Item Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>9</td>
-                            <td>Item 9</td>
-                            <td>$9</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Item 8</td>
-                            <td>$8</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Item 7</td>
-                            <td>$7</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Item 6</td>
-                            <td>$6</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Item 5</td>
-                            <td>$5</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Item 4</td>
-                            <td>$4</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Item 3</td>
-                            <td>$3</td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>Item 20</td>
-                            <td>$20</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Item 2</td>
-                            <td>$2</td>
-                        </tr>
-                        <tr>
-                            <td>19</td>
-                            <td>Item 19</td>
-                            <td>$19</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Item 2</td>
-                            <td>$2</td>
-                        </tr>
-                        <tr>
-                            <td>19</td>
-                            <td>Item 19</td>
-                            <td>$19</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Item 3</td>
-                            <td>$3</td>
-                        </tr>
-                        <tr>
-                            <td>20</td>
-                            <td>Item 20</td>
-                            <td>$20</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Item 2</td>
-                            <td>$2</td>
-                        </tr>
-                        <tr>
-                            <td>19</td>
-                            <td>Item 19</td>
-                            <td>$19</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Item 2</td>
-                            <td>$2</td>
-                        </tr>
-                        <tr>
-                            <td>19</td>
-                            <td>Item 19</td>
-                            <td>$19</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+	<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading"> 
+				<a href="{{route('buku.create')}}" class="btn btn-primary pull-right"><em class="fa fa-plus"></em> Tambah</a>
+			</div>
+			<div class="panel-body table-responsive">
+				@if(session()->get('success'))
+					<div class="alert alert-success alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						{{ session()->get('success') }}
+					</div>
+				@endif
+				<table class="table table-bordered table-hover datatable nowrap">
+					<thead>
+						<tr>
+							<th width="20">#</th>
+							<th width="20%">Judul</th>
+							<th>Penulis</th>
+							<th>Penerbit</th>
+							<th>Tahun Terbit</th>
+							<th>Kategori</th>
+							<th>Genre</th>
+							<th>Jumlah Halaman</th>
+							<th>Berat (g)</th>
+							<th>Dimensi (P x L)</th>
+							<th>Jenis Cover</th>
+							<th>Bahasa</th>
+							<th>Stok</th>
+							<th>Keterenagan</th>
+							<th width="150px">Act</th>
+						</tr>
+					</thead>
+					<tbody>
+						@php $no = 0; @endphp
+						@foreach ($datas as $data)
+						@php $no++; @endphp
+							<tr>
+								<td>{{$no}}</td>
+								<td>{{$data->judul}}</td>
+								<td>{{$data->id_penulis}}</td>
+								<td>{{$data->id_penerbit}}</td>
+								<td>{{$data->tahun_terbit}}</td>
+								<td>{{$data->id_kategori}}</td>
+								<td>{{$data->id_genre}}</td>
+								<td>{{$data->jumlah_halaman}}</td>
+								<td>{{$data->berat}}</td>
+								<td>{{$data->dimensi}}</td>
+								<td>{{$data->id_jenis_cover}}</td>
+								<td>{{$data->id_bahasa}}</td>
+								<td>{{$data->stok}}</td>
+								<td>{{$data->ket}}</td>
+								<td>
+									<form action="{{route('buku.destroy',$data->id)}}" method="POST">
+										<a href="{{route('buku.edit',$data->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
+										@csrf
+										@method('DELETE')
+										<button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</button>
+									</form>
+								</td>
+							</tr>
+						@endforeach
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 </div>
 @endsection

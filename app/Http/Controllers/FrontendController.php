@@ -13,7 +13,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        return view('frontend.index');
+        return view('frontend.page.home');
     }
 
     /**
@@ -45,7 +45,7 @@ class FrontendController extends Controller
      */
     public function show($id)
     {
-        //
+       //
     }
 
     /**
@@ -80,5 +80,9 @@ class FrontendController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function product()
+    {
+        return view('frontend.page.product');
     }
 }

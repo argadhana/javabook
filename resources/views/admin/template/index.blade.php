@@ -131,10 +131,13 @@
 				<a data-toggle="collapse" href="#master-data"><em class="fa fa-pencil">&nbsp;</em> Master Data <span data-toggle="collapse" href="#master-data" class="icon pull-right"><em class="fa fa-plus"></em></span></a>
 				<ul class="children collapse" id="master-data">
 					<li class="active">
-						<a href="{{route('jenis.index')}}"><span class="fa fa-minus">&nbsp;</span> Jenis Buku</a>
+						<a href="{{route('jenis.index')}}"><span class="fa fa-minus">&nbsp;</span> Jenis/Kategori Buku</a>
 					</li>
 					<li>
 						<a href="{{route('genre.index')}}"><span class="fa fa-minus">&nbsp;</span> Genre Buku</a>
+					</li>
+					<li>
+						<a href="{{route('text-bahasa.index')}}"><span class="fa fa-minus">&nbsp;</span> Text Bahasa</a>
 					</li>
 					<li>
 						<a href="{{route('buku.index')}}"><span class="fa fa-minus">&nbsp;</span> Buku</a>
@@ -189,6 +192,7 @@
 	{{-- <script src="{{asset('')}}lumino/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script> --}}
 	<script src="{{asset('')}}lumino/vendor/select2-4.0.5/dist/js/select2.min.js"></script>
 	<script src="{{asset('')}}lumino/vendor/jquery-mask/dist/jquery.mask.min.js"></script>
+	<script src="{{asset('')}}lumino/vendor/ckeditor5-build-classic/ckeditor.js"></script>
 	<script src="{{asset('')}}lumino/js/custom.js"></script>
 	@yield('js')
 	<script>
@@ -203,11 +207,21 @@
 		// 	})
 		// });
 		$('.datepicker').datepicker({
-			format: 'yyyy/mm/dd',
+			format: 'dd/mm/yyyy',
+		});
+		$('.tahun').datepicker({
+			format: 'mm/yyyy',
+			viewMode: "months", 
+    		minViewMode: "months"
 		});
 		$( ".selectpicker" ).select2({
 			theme: "bootstrap",
 		});
+		ClassicEditor
+        .create( document.querySelector('.editor'))
+        .catch( error => {
+            console.error( error );
+        } );
 	</script>
 		
 </body>

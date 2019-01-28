@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Ramsey\Uuid\Uuid;
+use App\Buku;
+use App\Text_bahasa;
 
 class BukuController extends Controller
 {
@@ -13,7 +16,8 @@ class BukuController extends Controller
 	 */
 	public function index()
 	{
-		return view('admin.buku.table');
+		$datas = Buku::orderBy('created_at','desc')->get();
+		return view('admin.buku.table',compact('datas'));
 	}
 
 	/**
@@ -23,7 +27,9 @@ class BukuController extends Controller
 	 */
 	public function create()
 	{
-		return view('admin.buku.form');
+		$bahasa = Text_bahasa::orderBy('created_at','desc')->get();
+		$header = "Tambah";
+		return view('admin.buku.form',compact('header','bahasa'));
 	}
 
 	/**
@@ -34,7 +40,7 @@ class BukuController extends Controller
 	 */
 	public function store(Request $request)
 	{
-		echo 'aalaslk';
+		//
 	}
 
 	/**

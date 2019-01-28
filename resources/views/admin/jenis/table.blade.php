@@ -1,8 +1,5 @@
-@extends('admin.templat.index')
-@section('title', 'Data Jenis Buku')
-@section('panel-link')
-	<li>Data Jenis Buku</li>
-@endsection
+@extends('admin.template.index')
+@section('title', 'Data Jenis/Kategori Buku')
 @section('main')
 <div class="row">
 	<div class="col-lg-12">
@@ -27,9 +24,9 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php $no = 0; ?>
+						@php $no = 0; @endphp
 						@foreach ($datas as $data)
-						<?php $no++; ?>
+						@php $no++; @endphp
 							<tr>
 								<td>{{$no}}</td>
 								<td>{{$data->jenis_buku}}</td>

@@ -1,4 +1,4 @@
-@extends('admin.templat.index')
+@extends('admin.template.index')
 @section('title', 'Data Genre Buku')
 @section('main')
 <div class="row">
@@ -24,9 +24,9 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php $no = 0; ?>
+						@php $no = 0; @endphp
 						@foreach ($datas as $data)
-						<?php $no++; ?>
+						@php $no++; @endphp
 							<tr>
 								<td>{{$no}}</td>
 								<td>{{$data->genre}}</td>

@@ -1,14 +1,14 @@
-@extends('admin.templat.index')
+@extends('admin.template.index')
 @section('title')
-	{{$header}} Jenis Buku
+	{{$header}} Jenis/Kategori Buku
 @endsection
 @section('panel-link')
-	<li>Data Jenis Buku</li>
+	<li>Data Jenis/Kategori Buku</li>
 @endsection
 @section('main')
 <div class="col-md-12">
 	<div class="panel panel-default">
-		<div class="panel-heading clearfix"></div>
+		<div class="panel-heading clearfix"><a href="{{route('jenis.index')}}" class="btn btn-primary pull-right"><i class="fa fa-arrow-left"></i> Kembali</a></div>
 		<div class="panel-body">
 			@if ($errors->any())
 				<div class="alert alert-danger">
@@ -39,7 +39,7 @@
 					</div>
 				</div>
 				<div class="btn-group pull-right">
-					<a href="{{url('admin/jenis')}}" class="btn btn-warning btn-lg">Batal</a>
+						<button type="reset" class="btn btn-warning btn-lg">Batal</button>
 					<button type="submit" class="btn btn-success btn-lg">Simpan</button>
 				</div>
 			</form>

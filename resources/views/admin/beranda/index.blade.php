@@ -1,4 +1,4 @@
-@extends('admin.templat.index')
+@extends('admin.template.index')
 
 @section('title','Dashboard')
 

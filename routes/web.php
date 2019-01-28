@@ -15,6 +15,7 @@
 //     return view('welcome');
 // });
 Route::resource('/', 'FrontendController');
+Route::get('/product', 'FrontendController@product');
 Route::get('/admin', function ()
 {
     return redirect('/admin/dashboard');
@@ -23,3 +24,4 @@ Route::resource('/admin/dashboard','BerandaController');
 Route::resource('/admin/buku','BukuController');
 Route::resource('/admin/jenis','JenisController');
 Route::resource('/admin/genre','GenreController');
+Route::resource('/admin/text-bahasa','TextBahasaController');
