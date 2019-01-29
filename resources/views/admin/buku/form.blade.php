@@ -47,7 +47,11 @@
 				<div class="form-group">
 					<label class="col-md-2 control-label">Jenis Cover</label>
 					<div class="col-md-10">
-						<select name="cover" class="form-control selectpicker"></select>
+						<select name="cover" class="form-control selectpicker">
+							@foreach ($covers as $cover)
+								<option value="{{$cover->id}}" title="{{$cover->ket}}">{{$cover->jenis_cover}}</option>
+							@endforeach
+						</select>
 					</div>
 				</div>
 				<div class="form-group">

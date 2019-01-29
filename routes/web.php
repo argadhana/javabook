@@ -25,3 +25,4 @@ Route::resource('/admin/buku','BukuController');
 Route::resource('/admin/jenis','JenisController');
 Route::resource('/admin/genre','GenreController');
 Route::resource('/admin/text-bahasa','TextBahasaController');
+Route::resource('/admin/jenis-cover','JenisCoverController');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
 use App\Buku;
 use App\Text_bahasa;
+use App\Jenis_cover;
 
 class BukuController extends Controller
 {
@@ -27,9 +28,10 @@ class BukuController extends Controller
 	 */
 	public function create()
 	{
-		$bahasa = Text_bahasa::orderBy('created_at','desc')->get();
+		$covers = Jenis_cover::orderBy('created_at','asc')->get();
+		$bahasa = Text_bahasa::orderBy('created_at','asc')->get();
 		$header = "Tambah";
-		return view('admin.buku.form',compact('header','bahasa'));
+		return view('admin.buku.form',compact('header','bahasa','covers'));
 	}
 
 	/**

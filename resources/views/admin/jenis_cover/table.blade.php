@@ -1,11 +1,11 @@
 @extends('admin.template.index')
-@section('title', 'Data Genre Buku')
+@section('title', 'Data Jenis Cover')
 @section('main')
 <div class="row">
 	<div class="col-lg-12">
 		<div class="panel panel-default">
 			<div class="panel-heading"> 
-				<a href="{{route('genre.create')}}" class="btn btn-primary pull-right"><em class="fa fa-plus"></em> Tambah</a>
+				<a href="{{route('jenis-cover.create')}}" class="btn btn-primary pull-right"><em class="fa fa-plus"></em> Tambah</a>
 			</div>
 			<div class="panel-body table-responsive">
 				@if(session()->get('success'))
@@ -18,8 +18,8 @@
 					<thead>
 						<tr>
 							<th width="20">#</th>
-							<th width="20%">Genre Buku</th>
-							<th>Deskripsi</th>
+							<th width="20%">Jenis Cover</th>
+							<th>Keterangan</th>
 							<th width="150px">Act</th>
 						</tr>
 					</thead>
@@ -29,11 +29,11 @@
 						@php $no++; @endphp
 							<tr>
 								<td>{{$no}}</td>
-								<td>{{$data->genre}}</td>
-								<td>{{$data->keterangan}}</td>
+								<td>{{$data->jenis_cover}}</td>
+								<td>{{$data->ket}}</td>
 								<td>
-									<form action="{{route('genre.destroy',$data->id)}}" method="POST">
-										<a href="{{route('genre.edit',$data->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
+									<form action="{{route('jenis-cover.destroy',$data->id)}}" method="POST">
+										<a href="{{route('jenis-cover.edit',$data->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
 										@csrf
 										@method('DELETE')
 										<button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</button>

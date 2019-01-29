@@ -134,6 +134,9 @@
 						<a href="{{route('jenis.index')}}"><span class="fa fa-minus">&nbsp;</span> Jenis/Kategori Buku</a>
 					</li>
 					<li>
+						<a href="{{route('jenis-cover.index')}}"><span class="fa fa-minus">&nbsp;</span> Jenis Cover</a>
+					</li>
+					<li>
 						<a href="{{route('genre.index')}}"><span class="fa fa-minus">&nbsp;</span> Genre Buku</a>
 					</li>
 					<li>

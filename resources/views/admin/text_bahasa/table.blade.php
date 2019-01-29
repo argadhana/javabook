@@ -14,7 +14,7 @@
 						{{ session()->get('success') }}
 					</div>
 				@endif
-				<table class="table table-bordered table-hover datatable nowrap">
+				<table class="table table-bordered table-hover datatable">
 					<thead>
 						<tr>
 							<th width="20">#</th>
