@@ -46,6 +46,9 @@
 		.nowrap {
 			white-space:nowrap !important;
 		}
+		.datepicker-dropdown{
+			z-index: 99999 !important;
+		}
 	</style>
 </head>
 <body>

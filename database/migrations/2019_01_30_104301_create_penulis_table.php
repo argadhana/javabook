@@ -19,6 +19,7 @@ class CreatePenulisTable extends Migration
             $table->string('tempat_lahir',32);
             $table->date('tgl_lahir');
             $table->date('mulai_debut')->nullable();
+            $table->string('img')->nullable();
             $table->text('ket')->nullable();
             $table->timestamps();
         });

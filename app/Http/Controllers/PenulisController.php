@@ -41,14 +41,24 @@ class PenulisController extends Controller
         $request->validate([
             'nama' => 'required|max:32',
             'tempat_lahir' => 'required',
-            'tgl_lahir' => 'required'
-		]);
+            'tgl_lahir' => 'required',
+            'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        $id = Uuid::uuid4()->getHex();
+        $file = $request->img;
+        if ($file) {
+            $fileName = $id.'.'.$file->getClientOriginalExtension();
+            $file->move(public_path('img'), $fileName);
+        }else{
+            $fileName = $file;
+        }
         $data =  new Penulis([
-			'id' => Uuid::uuid4()->getHex(),
+			'id' => $id,
             'nama' => $request->get('nama'),
             'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
             'tempat_lahir' => $request->get('tempat_lahir'),
             'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
+            'img' => $fileName,
 			'ket' => $request->get('ket')
 		]);
 		$data->save();
@@ -91,13 +101,22 @@ class PenulisController extends Controller
         $request->validate([
             'nama' => 'required|max:32',
             'tempat_lahir' => 'required',
-            'tgl_lahir' => 'required'
-		]);
+            'tgl_lahir' => 'required',
+            'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        $file = $request->img;
+        if ($file) {
+            $fileName = $id.'.'.$file->getClientOriginalExtension();
+            $file->move(public_path('img'), $fileName);
+        }else{
+            $fileName = $file;
+        }
 		$data =  Penulis::findOrFail($id)->update([
             'nama' => $request->get('nama'),
             'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
             'tempat_lahir' => $request->get('tempat_lahir'),
             'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
+            'img' => $fileName,
 			'ket' => $request->get('ket')
         ]);
 		return redirect('/admin/penulis')->with('success','Edit data berhasil !!');
@@ -112,6 +131,9 @@ class PenulisController extends Controller
     public function destroy($id)
     {
         $data = Penulis::findOrFail($id);
+        if ($data->img) {
+            unlink(public_path().'/img/'.$data->img);
+        }
 		$data->delete();
 		return redirect('/admin/penulis')->with('success','Data berhasil dihapus !!');
     }

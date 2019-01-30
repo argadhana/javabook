@@ -13,6 +13,7 @@ class Penulis extends Model
         'tempat_lahir',
         'tgl_lahir',
         'mulai_debut',
+        'img',
         'ket'
     ];
 

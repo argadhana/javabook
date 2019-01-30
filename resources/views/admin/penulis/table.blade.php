@@ -22,6 +22,7 @@
 							<th>Umur</th>
 							<th>Tempat/Tgl Lahir</th>
 							<th>Mulai Debut</th>
+							<th>Foto</th>
 							<th>Keterangan</th>
 							<th width="150px">Act</th>
 						</tr>
@@ -42,6 +43,13 @@
 								<td>{{ $diff->y.' Tahun' }}</td>
 								<td>{{$data->tempat_lahir.', '.date('d/m/Y',strtotime($data->tgl_lahir))}}</td>
 								<td>{{date('d/m/Y',strtotime($data->mulai_debut))}}</td>
+								<td>
+									@if ($data->img)
+										<img src="{{asset('')}}img/{{$data->img}}" class="img-circle img-responsive" width="50" height="50">
+									@else
+										<img src="{{asset('')}}img/fff.png" class="img-circle img-responsive" width="50" height="50">
+									@endif
+								</td>
 								<td>{{$data->ket}}</td>
 								<td>
 									<form action="{{route('penulis.destroy',$data->id)}}" method="POST">

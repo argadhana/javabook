@@ -20,10 +20,10 @@
 				</div><br />
 			@endif
 			@if (isset($data->id))
-				<form class="form-horizontal row-border" action="{{route('penulis.update',$data->id)}}" method="POST">
+				<form class="form-horizontal row-border" action="{{route('penulis.update',$data->id)}}" method="POST" enctype="multipart/form-data">
 				@method("PATCH")
 			@else				
-				<form class="form-horizontal row-border" action="{{route('penulis.store')}}" method="POST">
+				<form class="form-horizontal row-border" action="{{route('penulis.store')}}" method="POST" enctype="multipart/form-data">
 			@endif
 				@csrf
 				<div class="form-group">
@@ -55,6 +55,12 @@
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">Foto</label>
+					<div class="col-md-10">
+						<input type="file" name="img" class="form-control">
 					</div>
 				</div>
 				<div class="form-group">
