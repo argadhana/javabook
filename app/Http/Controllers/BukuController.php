@@ -7,6 +7,8 @@ use Ramsey\Uuid\Uuid;
 use App\Buku;
 use App\Text_bahasa;
 use App\Jenis_cover;
+use App\Jenis_buku;
+use App\Genre;
 
 class BukuController extends Controller
 {
@@ -28,10 +30,12 @@ class BukuController extends Controller
 	 */
 	public function create()
 	{
+		$jenis_buku = Jenis_buku::orderBy('created_at','asc')->get();
+		$genres = Genre::orderBy('created_at','asc')->get();
 		$covers = Jenis_cover::orderBy('created_at','asc')->get();
 		$bahasa = Text_bahasa::orderBy('created_at','asc')->get();
 		$header = "Tambah";
-		return view('admin.buku.form',compact('header','bahasa','covers'));
+		return view('admin.buku.form',compact('header','bahasa','covers','jenis_buku','genres'));
 	}
 
 	/**

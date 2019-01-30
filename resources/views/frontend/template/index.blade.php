@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>@yield('title') | BookStore</title>
+    <title>@yield('title') | Java Book</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="BookStore shop project">
+    <meta name="description" content="JavaBook shop project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{asset('')}}frontend/plugins/bootstrap-4.2.1-dist/css/bootstrap.min.css">
     <link href="{{asset('')}}frontend/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
@@ -32,7 +32,7 @@
 					<div class="row">
 						<div class="col d-flex flex-row">
 							<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{{asset('')}}frontend/images/phone.png" alt=""></div>+62 855 7467 0577</div>
-							<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{{asset('')}}frontend/images/mail.png" alt=""></div><a href="mailto:bookstore@gmail.com">bookstore@gmail.com</a></div>
+							<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="{{asset('')}}frontend/images/mail.png" alt=""></div><a href="mailto:javabook@gmail.com">javabook@gmail.com</a></div>
 							<div class="top_bar_content ml-auto">
 								{{-- <div class="top_bar_menu">
 									<ul class="standard_dropdown top_bar_dropdown">
@@ -74,7 +74,7 @@
 						<!-- Logo -->
 						<div class="col-lg-2 col-sm-3 col-3 order-1">
 							<div class="logo_container">
-								<div class="logo"><a href="#">BookStore</a></div>
+								<div class="logo"><a href="#">JavaBook</a></div>
 							</div>
 						</div>
 

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>@yield('title') | Book Store</title>
+	<title>@yield('title') | Java Book</title>
 	<link href="{{asset('')}}lumino/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{asset('')}}lumino/css/font-awesome.min.css" rel="stylesheet">
 	<link href="{{asset('')}}lumino/css/datepicker3.css" rel="stylesheet">
@@ -37,7 +37,7 @@
 		}
 		.select2-dropdown{
 			box-shadow: none !important;
-			border: 2px solid #74b9ff !important;
+			border: 2px solid #30a5ff !important;
 		}
 		th{
 			height: 20px !important;
@@ -56,7 +56,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>Book</span>Store</a>
+				<a class="navbar-brand" href="{{url('/admin')}}"><span>Java</span>Book</a>
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger">15</span>
@@ -126,7 +126,7 @@
 		</div>
 		<div class="divider"></div>
 		<ul class="nav menu">
-			<li class="{{(request()->is('admin/dashboard*')) ? 'active' : ''}}"><a href="{{route('dashboard.index')}}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
+			<li><a href="{{route('dashboard.index')}}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li class="parent ">
 				<a data-toggle="collapse" href="#master-data"><em class="fa fa-pencil">&nbsp;</em> Master Data <span data-toggle="collapse" href="#master-data" class="icon pull-right"><em class="fa fa-plus"></em></span></a>
 				<ul class="children collapse" id="master-data">
@@ -141,6 +141,9 @@
 					</li>
 					<li>
 						<a href="{{route('text-bahasa.index')}}"><span class="fa fa-minus">&nbsp;</span> Text Bahasa</a>
+					</li>
+					<li>
+						<a href="{{route('penulis.index')}}"><span class="fa fa-minus">&nbsp;</span> Penulis</a>
 					</li>
 					<li>
 						<a href="{{route('buku.index')}}"><span class="fa fa-minus">&nbsp;</span> Buku</a>
@@ -161,7 +164,7 @@
 					</li>
 				</ul>
 			</li>
-			<li><a href="login.html"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+			<li><a href=""><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div><!--/.sidebar-->
 		
@@ -203,14 +206,14 @@
 			$('.datatable').DataTable();
 			$('.money').mask('#.##0', {reverse: true});
 		});
-		// $(function () {
-		// 	$('ul li a').filter(function(){return this.href==location.href}).parent().addClass('active').siblings().removeClass('active')
-		// 	$('ul li a').click(function(){
-		// 		$(this).parent().addClass('active').siblings().removeClass('active')	
-		// 	})
-		// });
+		$(function () {
+			$('ul li a').filter(function(){return this.href==location.href}).parent().addClass('active').siblings().removeClass('active')
+			$('ul li a').click(function(){
+				$(this).parent().addClass('active').siblings().removeClass('active')	
+			})
+		});
 		$('.datepicker').datepicker({
-			format: 'dd/mm/yyyy',
+			format: 'dd-mm-yyyy',
 		});
 		$('.tahun').datepicker({
 			format: 'mm/yyyy',

@@ -45,9 +45,31 @@
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-md-2 control-label">Jenis Buku *</label>
+					<div class="col-md-10">
+						<select name="jenis_buku" class="form-control selectpicker" required>
+							<option value="">-- PILIH --</option>
+							@foreach ($jenis_buku as $val_jenis)
+								<option value="{{$val_jenis->id}}" title="{{$val_jenis->keterangan}}">{{$val_jenis->jenis_buku}}</option>
+							@endforeach
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">Genre</label>
+					<div class="col-md-10">
+						<select name="genre" class="form-control selectpicker" multiple>
+							@foreach ($genres as $genre)
+								<option value="{{$genre->id}}" title="{{$genre->keterangan}}">{{$genre->genre}}</option>
+							@endforeach
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="col-md-2 control-label">Jenis Cover</label>
 					<div class="col-md-10">
 						<select name="cover" class="form-control selectpicker">
+							<option value="">-- PILIH --</option>
 							@foreach ($covers as $cover)
 								<option value="{{$cover->id}}" title="{{$cover->ket}}">{{$cover->jenis_cover}}</option>
 							@endforeach
@@ -58,6 +80,7 @@
 					<label class="col-md-2 control-label">Bahasa *</label>
 					<div class="col-md-10">
 						<select name="bahasa" class="form-control selectpicker" required>
+							<option value="">-- PILIH --</option>
 							@foreach ($bahasa as $lang)
 								<option value="{{$lang->id}}">{{$lang->bahasa}}</option>
 							@endforeach
@@ -73,13 +96,13 @@
 				<div class="form-group">
 					<label class="col-md-2 control-label">Jumlah Halaman</label>
 					<div class="col-md-10">
-						<input type="text" name="jumlah_halaman" class="form-control" value="@if (isset($data->id)){{$data->jumlah_halaman}}@endif">
+						<input type="number" name="jumlah_halaman" class="form-control" value="@if (isset($data->id)){{$data->jumlah_halaman}}@endif">
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-md-2 control-label">Berat (g)</label>
 					<div class="col-md-10">
-						<input type="text" name="berat" class="form-control" value="@if (isset($data->id)){{$data->berat}}@endif">
+						<input type="number" name="berat" class="form-control" value="@if (isset($data->id)){{$data->berat}}@endif">
 					</div>
 				</div>
 				<div class="form-group">
