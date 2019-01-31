@@ -20,11 +20,10 @@
 							<th width="20">#</th>
 							<th>Nama</th>
 							<th>Umur</th>
-							<th>Tempat/Tgl Lahir</th>
-							<th>Mulai Debut</th>
+							<th>Lahir</th>
+							<th>Kebangsaan</th>
 							<th>Foto</th>
-							<th>Keterangan</th>
-							<th width="150px">Act</th>
+							<th>Act</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -33,16 +32,16 @@
 						@php $no++; @endphp
 							<tr>
 								<td>{{$no}}</td>
-								<td>{{$data->nama}}</td>
+								<td class="nowrap">{{$data->nama}}</td>
 								@php
 									$biday = new DateTime($data->tgl_lahir);
 									$today = new DateTime();
 									
 									$diff = $today->diff($biday);	
 								@endphp
-								<td>{{ $diff->y.' Tahun' }}</td>
-								<td>{{$data->tempat_lahir.', '.date('d/m/Y',strtotime($data->tgl_lahir))}}</td>
-								<td>{{date('d/m/Y',strtotime($data->mulai_debut))}}</td>
+								<td class="nowrap">{{ $diff->y.' Tahun' }}</td>
+								<td>{{$data->tempat_lahir.', '.date('d F Y',strtotime($data->tgl_lahir))}}</td>
+								<td>{{$data->kebangsaan}}</td>
 								<td>
 									@if ($data->img)
 										<img src="{{asset('')}}img/{{$data->img}}" class="img-circle img-responsive" width="50" height="50">
@@ -50,9 +49,9 @@
 										<img src="{{asset('')}}img/fff.png" class="img-circle img-responsive" width="50" height="50">
 									@endif
 								</td>
-								<td>{{$data->ket}}</td>
-								<td>
+								<td class="nowrap">
 									<form action="{{route('penulis.destroy',$data->id)}}" method="POST">
+										<a href="{{route('penulis.show',$data->id)}}" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
 										<a href="{{route('penulis.edit',$data->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
 										@csrf
 										@method('DELETE')

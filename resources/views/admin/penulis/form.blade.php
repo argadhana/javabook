@@ -27,18 +27,9 @@
 			@endif
 				@csrf
 				<div class="form-group">
-					<label class="col-md-2 control-label">Nama *</label>
+					<label class="col-md-2 control-label">Nama Lengkap *</label>
 					<div class="col-md-10">
 						<input type="text" name="nama" class="form-control" required value="@if (isset($data->id)) {{$data->nama}} @endif">
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-md-2 control-label">Mulai Debut</label>
-					<div class="col-md-10">
-						<div class="input-group">
-							<input type="text" name="mulai_debut" class="form-control datepicker" value="@if (isset($data->id)) {{date('d-m-Y',strtotime($data->mulai_debut))}} @else {{date('d-m-Y')}} @endif">
-							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-						</div>
 					</div>
 				</div>
 				<div class="form-group">
@@ -54,6 +45,50 @@
 									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">Kebangsaan *</label>
+					<div class="col-md-10">
+						<input type="text" name="kebangsaan" class="form-control" required value="@if (isset($data->id)) {{$data->kebangsaan}} @endif">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">Tempat Tinggal</label>
+					<div class="col-md-10">
+						<input type="text" name="tempat_tinggal" class="form-control" placeholder="exp : Jakarta, Jawa Barat, Indonesia" value="@if (isset($data->id)) {{$data->tempat_tinggal}} @endif">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">Pendidikan</label>
+					<div class="col-md-10">
+						<input type="text" name="pendidikan" class="form-control" placeholder="Pendidikan terakhir(Almamater)" value="@if (isset($data->id)) {{$data->pendidikan}} @endif">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">Aliran Sastra(Utama)</label>
+					<div class="col-md-10">
+						<select name="aliran" class="form-control selectpicker">
+							<option value="">-- Pilih --</option>
+							@foreach ($genres as $genre)
+								<option value="{{$genre->id}}" title="{{$genre->keterangan}}" @if (isset($data->genre_id) == $genre->id) {{'selected'}} @endif>{{$genre->genre}}</option>
+							@endforeach
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">Karya Terkenal</label>
+					<div class="col-md-10">
+						<input type="text" name="karya_terkenal" class="form-control" value="@if (isset($data->id)) {{$data->karya_terkenal}} @endif">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-md-2 control-label">Mulai Debut</label>
+					<div class="col-md-10">
+						<div class="input-group">
+							<input type="text" name="mulai_debut" class="form-control datepicker" value="@if (isset($data->id)) {{date('d-m-Y',strtotime($data->mulai_debut))}}@endif">
+							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 						</div>
 					</div>
 				</div>

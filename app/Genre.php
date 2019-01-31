@@ -14,4 +14,9 @@ class Genre extends Model
     ];
 
     public $incrementing = false;
+
+    public function penulis()
+    {
+        return $this->hasOne(Penulis::class);
+    }
 }

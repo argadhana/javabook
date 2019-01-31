@@ -15,11 +15,11 @@ class CreateBukusTable extends Migration
     {
         Schema::create('bukus', function (Blueprint $table) {
             $table->string('id',40)->primary();
-            $table->string('id_penulis',40);
-            $table->string('id_penerbit',40);
-            $table->string('id_jenis_cover',40);
-            $table->string('id_kategori',40);
-            $table->string('id_relasi_genre');
+            $table->string('penulis_id',40);
+            $table->string('penerbit_id',40);
+            $table->string('jenis_cover_id',40);
+            $table->string('kategori_id',40);
+            $table->string('relasi_genre_id');
             $table->string('judul');
             $table->date('tahun_terbit',20);
             $table->unsignedInteger('jumlah_halaman')->nullable();

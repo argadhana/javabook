@@ -15,10 +15,15 @@ class CreatePenulisTable extends Migration
     {
         Schema::create('penulis', function (Blueprint $table) {
             $table->string('id',32)->primary();
-            $table->string('nama',50);
-            $table->string('tempat_lahir',32);
+            $table->string('nama');
+            $table->string('tempat_lahir');
             $table->date('tgl_lahir');
-            $table->date('mulai_debut')->nullable();
+            $table->string('tempat_tinggal')->nullable();
+            $table->string('kebangsaan')->nullable();
+            $table->string('pendidikan')->nullable()->comment = 'Pendidikan Terakhir';
+            $table->string('genre_id',32)->nullable()->comment = 'Aliran sastra(genre)';
+            $table->string('karya_terkenal')->nullable();
+            $table->date('mulai_debut')->nullable()->comment='Y-m-d';
             $table->string('img')->nullable();
             $table->text('ket')->nullable();
             $table->timestamps();
