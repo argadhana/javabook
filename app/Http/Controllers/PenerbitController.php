@@ -50,22 +50,19 @@ class PenerbitController extends Controller
 		}else{
 			$fileName = $file;
 		}
-		$data =  new Penulis([
+		$data =  new Penerbit([
 			'id' => $id,
 			'nama' => $request->get('nama'),
-			'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
-			'tempat_lahir' => $request->get('tempat_lahir'),
-			'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
-			'tempat_tinggal' => $request->get('tempat_tinggal'),
-			'kebangsaan' => $request->get('kebangsaan'),
-			'genre_id' => $request->get('aliran'),
-			'karya_terkenal' => $request->get('karya_terkenal'),
-			'pendidikan' => $request->get('pendidikan'),
+            'didirikan' => date('Y-m-d',strtotime($request->get('didirikan'))),
+            'kantor_pusat' => $request->get('kantor_pusat'),
+            'pemilik' => $request->get('pemilik'),
+            'induk_perusahaan' => $request->get('induk_perusahaan'),
+            'situs_web' => $request->get('situs_web'),
 			'img' => $fileName,
 			'ket' => $request->get('ket')
 		]);
 		$data->save();
-		return redirect('/admin/penulis')->with('success','Data berhasil disimpan !!');
+		return redirect('/admin/penerbit')->with('success','Data berhasil disimpan !!');
     }
 
     /**
@@ -116,18 +113,15 @@ class PenerbitController extends Controller
 		}
 		$data =  Penerbit::findOrFail($id)->update([
 			'nama' => $request->get('nama'),
-			'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
-			'tempat_lahir' => $request->get('tempat_lahir'),
-			'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
-			'tempat_tinggal' => $request->get('tempat_tinggal'),
-			'kebangsaan' => $request->get('kebangsaan'),
-			'genre_id' => $request->get('aliran'),
-			'karya_terkenal' => $request->get('karya_terkenal'),
-			'pendidikan' => $request->get('pendidikan'),
+            'didirikan' => date('Y-m-d',strtotime($request->get('didirikan'))),
+            'kantor_pusat' => $request->get('kantor_pusat'),
+            'pemilik' => $request->get('pemilik'),
+            'induk_perusahaan' => $request->get('induk_perusahaan'),
+            'situs_web' => $request->get('situs_web'),
 			'img' => $fileName,
 			'ket' => $request->get('ket')
 		]);
-		return redirect('/admin/penulis')->with('success','Edit data berhasil !!');
+		return redirect('/admin/penerbit')->with('success','Edit data berhasil !!');
     }
 
     /**
@@ -143,6 +137,6 @@ class PenerbitController extends Controller
 			unlink(public_path().'/img/'.$data->img);
 		}
 		$data->delete();
-		return redirect('/admin/penulis')->with('success','Data berhasil dihapus !!');
+		return redirect('/admin/penerbit')->with('success','Data berhasil dihapus !!');
     }
 }

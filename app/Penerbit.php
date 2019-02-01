@@ -15,6 +15,7 @@ class Penerbit extends Model
         'pemilik',
         'induk_perusahaan',
         'situs_web',
+        'img',
         'ket'
     ];
     public $incrementing = false;

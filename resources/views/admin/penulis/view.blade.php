@@ -76,7 +76,7 @@
 						<tr>
 							<td><b>Mulai Debut</b></td>
 							<td>:</td>
-							<td>{{$data->mulai_debut == '1970-01-01' ? '': date('d/m/Y',strtotime($data->mulai_debut))}}</td>
+							<td>{{$data->mulai_debut == '1970-01-01' ? '-': date('d/m/Y',strtotime($data->mulai_debut))}}</td>
 						</tr>
 						<tr>
 							<td><b>Keterangan</b></td>
