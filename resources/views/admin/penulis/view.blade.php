@@ -9,7 +9,11 @@
 	<div class="col-md-5">
 		<div class="panel panel-default">
 			<div class="panel-body">
+				@if ($data->img)
 					<img src="{{asset('')}}img/{{$data->img}}" class="img-responsive">
+				@else
+					<img src="{{asset('')}}img/No_Image_Available_2.png" class="img-responsive">
+				@endif
 			</div>
 		</div>
 	</div>

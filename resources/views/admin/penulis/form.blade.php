@@ -72,7 +72,11 @@
 						<select name="aliran" class="form-control selectpicker">
 							<option value="">-- Pilih --</option>
 							@foreach ($genres as $genre)
-								<option value="{{$genre->id}}" title="{{$genre->keterangan}}" @if (isset($data->genre_id) == $genre->id) {{'selected'}} @endif>{{$genre->genre}}</option>
+								@if (isset($data->genre_id))
+									<option value="{{$genre->id}}" title="{{$genre->keterangan}}" {{ $data->genre_id == $genre->id ? 'selected' : '' }}>{{$genre->genre}}</option>
+								@else
+									<option value="{{$genre->id}}" title="{{$genre->keterangan}}">{{$genre->genre}}</option>
+								@endif
 							@endforeach
 						</select>
 					</div>
@@ -95,7 +99,7 @@
 				<div class="form-group">
 					<label class="col-md-2 control-label">Foto</label>
 					<div class="col-md-10">
-						<input type="file" name="img" class="form-control">
+						<input type="file" name="img" class="form-control" value="">
 					</div>
 				</div>
 				<div class="form-group">
