@@ -22,7 +22,7 @@
 							<th>Negara</th>
 							<th width="8%">ISO <small style="font-size:11px;margin-left:3px;">[<a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank" title="List of ISO 639-1 codes">link</a>]</small></th>
 							<th>Keterangan</th>
-							<th width="150px">Act</th>
+							<th>Act</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -35,7 +35,7 @@
 								<td class="text-capitalize">{{$data->negara}}</td>
 								<td class="text-lowercase">{{$data->iso}}</td>
 								<td>{{$data->ket}}</td>
-								<td>
+								<td class="nowrap">
 									<form action="{{route('text-bahasa.destroy',$data->id)}}" method="POST">
 										<a href="{{route('text-bahasa.edit',$data->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
 										@csrf

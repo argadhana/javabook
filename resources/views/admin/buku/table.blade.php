@@ -14,7 +14,7 @@
 						{{ session()->get('success') }}
 					</div>
 				@endif
-				<table class="table table-bordered table-hover datatable nowrap">
+				<table class="table table-bordered table-hover datatable">
 					<thead>
 						<tr>
 							<th width="20">#</th>
@@ -31,7 +31,7 @@
 							<th>Bahasa</th>
 							<th>Stok</th>
 							<th>Keterenagan</th>
-							<th width="150px">Act</th>
+							<th>Act</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -53,7 +53,7 @@
 								<td>{{$data->id_bahasa}}</td>
 								<td>{{$data->stok}}</td>
 								<td>{{$data->ket}}</td>
-								<td>
+								<td class="nowrap">
 									<form action="{{route('buku.destroy',$data->id)}}" method="POST">
 										<a href="{{route('buku.edit',$data->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
 										@csrf

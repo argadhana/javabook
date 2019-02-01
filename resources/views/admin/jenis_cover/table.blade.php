@@ -20,7 +20,7 @@
 							<th width="20">#</th>
 							<th width="20%">Jenis Cover</th>
 							<th>Keterangan</th>
-							<th width="150px">Act</th>
+							<th>Act</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -31,7 +31,7 @@
 								<td>{{$no}}</td>
 								<td>{{$data->jenis_cover}}</td>
 								<td>{{$data->ket}}</td>
-								<td>
+								<td class="nowrap">
 									<form action="{{route('jenis-cover.destroy',$data->id)}}" method="POST">
 										<a href="{{route('jenis-cover.edit',$data->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
 										@csrf

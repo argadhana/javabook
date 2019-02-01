@@ -21,7 +21,7 @@
 							<th>Nama</th>
 							<th>Didirikan</th>
 							<th>Kantor Pusat</th>
-							<th width="150">Act</th>
+							<th>Act</th>
 						</tr>
 					</thead>
 					<tbody>

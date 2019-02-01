@@ -20,7 +20,7 @@
 							<th width="20">#</th>
 							<th width="20%">Genre Buku</th>
 							<th>Deskripsi</th>
-							<th width="150px">Act</th>
+							<th>Act</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -31,7 +31,7 @@
 								<td>{{$no}}</td>
 								<td>{{$data->genre}}</td>
 								<td>{{$data->keterangan}}</td>
-								<td>
+								<td class="nowrap">
 									<form action="{{route('genre.destroy',$data->id)}}" method="POST">
 										<a href="{{route('genre.edit',$data->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
 										@csrf
