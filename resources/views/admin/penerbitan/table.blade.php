@@ -44,7 +44,7 @@
 								<td>{{$data->kebangsaan}}</td>
 								<td>
 									@if ($data->img)
-										<img src="{{asset('')}}img/penulis/{{$data->img}}" class="img-circle img-responsive" width="50" height="50">
+										<img src="{{asset('')}}img/{{$data->img}}" class="img-circle img-responsive" width="50" height="50">
 									@else
 										<img src="{{asset('')}}img/fff.png" class="img-circle img-responsive" width="50" height="50">
 									@endif

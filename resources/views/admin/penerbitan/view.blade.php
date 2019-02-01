@@ -10,7 +10,7 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				@if ($data->img)
-					<img src="{{asset('')}}img/penulis/{{$data->img}}" class="img-responsive">
+					<img src="{{asset('')}}img/{{$data->img}}" class="img-responsive">
 				@else
 					<img src="{{asset('')}}img/No_Image_Available_2.png" class="img-responsive">
 				@endif
@@ -76,7 +76,7 @@
 						<tr>
 							<td><b>Mulai Debut</b></td>
 							<td>:</td>
-							<td>{{$data->mulai_debut == '1970-01-01' ? '': date('d/m/Y',strtotime($data->mulai_debut))}}</td>
+							<td>{{$data->mulai_debut = '1970-01-01' ? '': date('d/m/Y',strtotime($data->mulai_debut))}}</td>
 						</tr>
 						<tr>
 							<td><b>Keterangan</b></td>

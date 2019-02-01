@@ -41,7 +41,7 @@
 							</div>
 							<div class="col-md-6">
 								<div class="input-group">
-									<input type="text" name="tgl_lahir" class="form-control date datepicker" placeholder="Tanggal Lahir" required value="@if (isset($data->id)) {{date('d-m-Y',strtotime($data->tgl_lahir))}} @else {{date('d-m-Y')}} @endif">
+									<input type="text" name="tgl_lahir" class="form-control datepicker" placeholder="Tanggal Lahir" required value="@if (isset($data->id)) {{date('d-m-Y',strtotime($data->tgl_lahir))}} @else {{date('d-m-Y')}} @endif">
 									<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 								</div>
 							</div>
@@ -91,7 +91,7 @@
 					<label class="col-md-2 control-label">Mulai Debut</label>
 					<div class="col-md-10">
 						<div class="input-group">
-							<input type="text" name="mulai_debut" class="form-control date datepicker" value="@if (isset($data->id)) {{$data->mulai_debut = '1970-01-01' ? '': date('d-m-Y',strtotime($data->mulai_debut))}}@endif">
+							<input type="text" name="mulai_debut" class="form-control datepicker" value="@if (isset($data->id)) {{$data->mulai_debut = '1970-01-01' ? '': date('d-m-Y',strtotime($data->mulai_debut))}}@endif">
 							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 						</div>
 					</div>

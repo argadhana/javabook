@@ -149,6 +149,9 @@
 						<a href="{{route('penulis.index')}}"><span class="fa fa-minus">&nbsp;</span> Penulis</a>
 					</li>
 					<li>
+						<a href="{{route('penerbit.index')}}"><span class="fa fa-minus">&nbsp;</span> Penerbit</a>
+					</li>
+					<li>
 						<a href="{{route('buku.index')}}"><span class="fa fa-minus">&nbsp;</span> Buku</a>
 					</li>
 				</ul>
@@ -208,6 +211,7 @@
 		$(document).ready( function () {
 			$('.datatable').DataTable();
 			$('.money').mask('#.##0', {reverse: true});
+			$('.date').mask('00-00-0000');
 		});
 		$(function () {
 			$('ul li a').filter(function(){return this.href==location.href}).parent().addClass('active').siblings().removeClass('active')

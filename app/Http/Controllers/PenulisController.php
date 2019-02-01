@@ -51,7 +51,7 @@ class PenulisController extends Controller
 		$file = $request->img;
 		if ($file) {
 			$fileName = $id.'.'.$file->getClientOriginalExtension();
-			$file->move(public_path('img'), $fileName);
+			$file->move(public_path('img/penulis'), $fileName);
 		}else{
 			$fileName = $file;
 		}
@@ -118,7 +118,7 @@ class PenulisController extends Controller
 		$file = $request->img;
 		if ($file) {
 			$fileName = $id.'.'.$file->getClientOriginalExtension();
-			$file->move(public_path('img'), $fileName);
+			$file->move(public_path('img/penulis'), $fileName);
 		}else{
 			$fileName = $file;
 		}
