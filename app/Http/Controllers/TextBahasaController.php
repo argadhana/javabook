@@ -15,7 +15,7 @@ class TextBahasaController extends Controller
      */
     public function index()
     {
-        $datas = Text_bahasa::orderBy('created_at','desc')->get();
+        $datas = Text_bahasa::orderBy('created_at','desc')->paginate(10);
 		return view('admin.text_bahasa.table', compact('datas'));
     }
 

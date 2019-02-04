@@ -14,7 +14,7 @@
 						{{ session()->get('success') }}
 					</div>
 				@endif
-				<table class="table table-bordered table-hover datatable">
+				<table class="table table-bordered table-hover table-striped">
 					<thead>
 						<tr>
 							<th width="20">#</th>
@@ -43,6 +43,7 @@
 						@endforeach
 					</tbody>
 				</table>
+				{{$datas->links()}}
 			</div>
 		</div>
 	</div>

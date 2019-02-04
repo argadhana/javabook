@@ -15,7 +15,7 @@ class JenisCoverController extends Controller
      */
     public function index()
     {
-        $datas = Jenis_cover::orderBy('created_at','decs')->get();
+        $datas = Jenis_cover::orderBy('created_at','decs')->paginate(10);
         return view('admin.jenis_cover.table',compact('datas'));
     }
 

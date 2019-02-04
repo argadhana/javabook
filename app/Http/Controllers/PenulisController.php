@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
+use Image;
 use App\Penulis;
 use App\Genre;
 
@@ -16,7 +17,7 @@ class PenulisController extends Controller
 	 */
 	public function index()
 	{
-		$datas = Penulis::orderBy('created_at','decs')->get();
+		$datas = Penulis::orderBy('created_at','decs')->paginate(10);
 		return view('admin.penulis.table',compact('datas'));
 	}
 
@@ -45,31 +46,47 @@ class PenulisController extends Controller
 			'tempat_lahir' => 'required',
 			'tgl_lahir' => 'required',
 			'kebangsaan' => 'required',
-			'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+			'img.*' => 'image|mimes:jpeg,png,jpg|max:2048'
 		]);
 		$id = Uuid::uuid4()->getHex();
-		$file = $request->img;
-		if ($file) {
+		$file = $request->file('img');
+		if ($request->hasFile('img')) {
 			$fileName = $id.'.'.$file->getClientOriginalExtension();
-			$file->move(public_path('img/penulis'), $fileName);
+			$img = Image::make($file->getRealPath());
+			$img->resize(500,620);
+			$img->save(public_path('img/penulis/' .$fileName));
+
+			$data =  new Penulis([
+				'id' => $id,
+				'nama' => $request->get('nama'),
+				'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
+				'tempat_lahir' => $request->get('tempat_lahir'),
+				'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
+				'tempat_tinggal' => $request->get('tempat_tinggal'),
+				'kebangsaan' => $request->get('kebangsaan'),
+				'genre_id' => $request->get('aliran'),
+				'karya_terkenal' => $request->get('karya_terkenal'),
+				'pendidikan' => $request->get('pendidikan'),
+				'img' => $fileName,
+				'ket' => $request->get('ket')
+			]);
+			$data->save();
 		}else{
-			$fileName = $file;
+			$data =  new Penulis([
+				'id' => $id,
+				'nama' => $request->get('nama'),
+				'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
+				'tempat_lahir' => $request->get('tempat_lahir'),
+				'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
+				'tempat_tinggal' => $request->get('tempat_tinggal'),
+				'kebangsaan' => $request->get('kebangsaan'),
+				'genre_id' => $request->get('aliran'),
+				'karya_terkenal' => $request->get('karya_terkenal'),
+				'pendidikan' => $request->get('pendidikan'),
+				'ket' => $request->get('ket')
+			]);
+			$data->save();
 		}
-		$data =  new Penulis([
-			'id' => $id,
-			'nama' => $request->get('nama'),
-			'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
-			'tempat_lahir' => $request->get('tempat_lahir'),
-			'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
-			'tempat_tinggal' => $request->get('tempat_tinggal'),
-			'kebangsaan' => $request->get('kebangsaan'),
-			'genre_id' => $request->get('aliran'),
-			'karya_terkenal' => $request->get('karya_terkenal'),
-			'pendidikan' => $request->get('pendidikan'),
-			'img' => $fileName,
-			'ket' => $request->get('ket')
-		]);
-		$data->save();
 		return redirect('/admin/penulis')->with('success','Data berhasil disimpan !!');
 	}
 
@@ -113,28 +130,42 @@ class PenulisController extends Controller
 			'nama' => 'required|max:32',
 			'tempat_lahir' => 'required',
 			'tgl_lahir' => 'required',
-			'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+			'img.*' => 'image|mimes:jpeg,png,jpg|max:2048'
 		]);
-		$file = $request->img;
-		if ($file) {
+		$file = $request->file('img');
+		if ($request->hasFile('img')) {
 			$fileName = $id.'.'.$file->getClientOriginalExtension();
-			$file->move(public_path('img/penulis'), $fileName);
+			$img = Image::make($file->getRealPath());
+			$img->resize(500,620);
+			$img->save(public_path('img/penulis/' .$fileName));
+
+			$data =  Penulis::findOrFail($id)->update([
+				'nama' => $request->get('nama'),
+				'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
+				'tempat_lahir' => $request->get('tempat_lahir'),
+				'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
+				'tempat_tinggal' => $request->get('tempat_tinggal'),
+				'kebangsaan' => $request->get('kebangsaan'),
+				'genre_id' => $request->get('aliran'),
+				'karya_terkenal' => $request->get('karya_terkenal'),
+				'pendidikan' => $request->get('pendidikan'),
+				'img' => $fileName,
+				'ket' => $request->get('ket')
+			]);
 		}else{
-			$fileName = $file;
+			$data =  Penulis::findOrFail($id)->update([
+				'nama' => $request->get('nama'),
+				'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
+				'tempat_lahir' => $request->get('tempat_lahir'),
+				'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
+				'tempat_tinggal' => $request->get('tempat_tinggal'),
+				'kebangsaan' => $request->get('kebangsaan'),
+				'genre_id' => $request->get('aliran'),
+				'karya_terkenal' => $request->get('karya_terkenal'),
+				'pendidikan' => $request->get('pendidikan'),
+				'ket' => $request->get('ket')
+			]);
 		}
-		$data =  Penulis::findOrFail($id)->update([
-			'nama' => $request->get('nama'),
-			'mulai_debut' => date('Y-m-d',strtotime($request->get('mulai_debut'))),
-			'tempat_lahir' => $request->get('tempat_lahir'),
-			'tgl_lahir' => date('Y-m-d',strtotime($request->get('tgl_lahir'))),
-			'tempat_tinggal' => $request->get('tempat_tinggal'),
-			'kebangsaan' => $request->get('kebangsaan'),
-			'genre_id' => $request->get('aliran'),
-			'karya_terkenal' => $request->get('karya_terkenal'),
-			'pendidikan' => $request->get('pendidikan'),
-			'img' => $fileName,
-			'ket' => $request->get('ket')
-		]);
 		return redirect('/admin/penulis')->with('success','Edit data berhasil !!');
 	}
 

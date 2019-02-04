@@ -15,7 +15,7 @@ class JenisController extends Controller
 	 */
 	public function index()
 	{
-		$datas = Jenis_buku::orderBy('created_at','desc')->get();
+		$datas = Jenis_buku::orderBy('created_at','desc')->paginate(10);
 		return view('admin.jenis.table', compact('datas'));
 	}
 

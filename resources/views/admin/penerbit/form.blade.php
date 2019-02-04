@@ -62,7 +62,10 @@
 				<div class="form-group">
 					<label class="col-md-2 control-label">Situs Web</label>
 					<div class="col-md-10">
-						<input type="text" name="situs_web" class="form-control" placeholder="exp : www.example.com" value="@if (isset($data->id)) {{$data->situs_web}} @endif">
+						<div class="input-group">
+							<span class="input-group-addon">http://</span>
+							<input type="text" name="situs_web" class="form-control" placeholder="exp : www.example.com" value="@if (isset($data->id)) {{$data->situs_web}} @endif">
+						</div>
 					</div>
 				</div>
 				<div class="form-group">

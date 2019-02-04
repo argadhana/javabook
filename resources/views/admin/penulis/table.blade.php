@@ -14,7 +14,7 @@
 						{{ session()->get('success') }}
 					</div>
 				@endif
-				<table class="table table-bordered table-hover datatable">
+				<table class="table table-bordered table-hover table-striped">
 					<thead>
 						<tr>
 							<th width="20">#</th>
@@ -22,7 +22,6 @@
 							<th>Umur</th>
 							<th>Lahir</th>
 							<th>Kebangsaan</th>
-							<th>Foto</th>
 							<th>Act</th>
 						</tr>
 					</thead>
@@ -42,13 +41,6 @@
 								<td class="nowrap">{{ $diff->y.' Tahun' }}</td>
 								<td>{{$data->tempat_lahir.', '.date('d F Y',strtotime($data->tgl_lahir))}}</td>
 								<td>{{$data->kebangsaan}}</td>
-								<td>
-									@if ($data->img)
-										<img src="{{asset('')}}img/penulis/{{$data->img}}" class="img-circle img-responsive" width="50" height="50">
-									@else
-										<img src="{{asset('')}}img/fff.png" class="img-circle img-responsive" width="50" height="50">
-									@endif
-								</td>
 								<td class="nowrap">
 									<form action="{{route('penulis.destroy',$data->id)}}" method="POST">
 										<a href="{{route('penulis.show',$data->id)}}" class="btn btn-primary"><i class="fa fa-eye"></i> Detail</a>
@@ -62,6 +54,7 @@
 						@endforeach
 					</tbody>
 				</table>
+				{{$datas->links()}}
 			</div>
 		</div>
 	</div>

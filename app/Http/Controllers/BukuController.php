@@ -19,7 +19,7 @@ class BukuController extends Controller
 	 */
 	public function index()
 	{
-		$datas = Buku::orderBy('created_at','desc')->get();
+		$datas = Buku::orderBy('created_at','desc')->paginate(10);
 		return view('admin.buku.table',compact('datas'));
 	}
 
