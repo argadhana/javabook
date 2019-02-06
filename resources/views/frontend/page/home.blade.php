@@ -241,14 +241,14 @@
 						<div class="tabbed_container">
 							<div class="tabs">
 								<ul class="clearfix">
-									<li class="active">Terbaru</li>
-									<li>Sedang Dijual</li>
-									<li>Populer</li>
+									<li class="active">Semua Produk</li>
+									<!-- <li>Sedang Dijual</li> -->
+									<!-- <li>Populer</li> -->
 								</ul>
 								<div class="tabs_line"><span></span></div>
 							</div>
 
-							<!-- Product Panel -->
+							<!-- Product Panel Semua Produk -->
 							<div class="product_panel panel active">
 								<div class="featured_slider slider">
 
@@ -594,10 +594,9 @@
 
 							<!-- Product Panel -->
 
-							<div class="product_panel panel">
+<!-- 							<div class="product_panel panel">
 								<div class="featured_slider slider">
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
@@ -618,7 +617,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
@@ -639,7 +637,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -660,7 +657,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
@@ -681,7 +677,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -702,7 +697,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -723,7 +717,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
@@ -744,7 +737,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -765,7 +757,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -786,7 +777,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -807,7 +797,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -828,7 +817,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -849,7 +837,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -870,7 +857,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -891,7 +877,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -912,7 +897,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -936,13 +920,12 @@
 								</div>
 								<div class="featured_slider_dots_cover"></div>
 							</div>
-
+ -->
 							<!-- Product Panel -->
 
-							<div class="product_panel panel">
+<!-- 							<div class="product_panel panel">
 								<div class="featured_slider slider">
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
@@ -963,7 +946,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
@@ -984,7 +966,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1005,7 +986,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item discount d-flex flex-column align-items-center justify-content-center text-center">
@@ -1026,7 +1006,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1047,7 +1026,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1068,7 +1046,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item is_new d-flex flex-column align-items-center justify-content-center text-center">
@@ -1089,7 +1066,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1110,7 +1086,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1131,7 +1106,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1152,7 +1126,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1173,7 +1146,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1194,7 +1166,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1215,7 +1186,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1236,7 +1206,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1257,7 +1226,6 @@
 										</div>
 									</div>
 
-									<!-- Slider Item -->
 									<div class="featured_slider_item">
 										<div class="border_active"></div>
 										<div class="product_item d-flex flex-column align-items-center justify-content-center text-center">
@@ -1281,7 +1249,7 @@
 								</div>
 								<div class="featured_slider_dots_cover"></div>
 							</div>
-
+ -->
 						</div>
 					</div>
 
@@ -1361,15 +1329,13 @@
 
 	<!-- Banner -->
 
-	<div class="banner_2">
+<!-- 	<div class="banner_2">
 		<div class="banner_2_background" style="background-image:url({{asset('')}}frontend/images/banner_2_background.jpg)"></div>
 		<div class="banner_2_container">
 			<div class="banner_2_dots"></div>
-			<!-- Banner 2 Slider -->
 
 			<div class="owl-carousel owl-theme banner_2_slider">
 
-				<!-- Banner 2 Slider Item -->
 				<div class="owl-item">
 					<div class="banner_2_item">
 						<div class="container fill_height">
@@ -1394,7 +1360,6 @@
 					</div>
 				</div>
 
-				<!-- Banner 2 Slider Item -->
 				<div class="owl-item">
 					<div class="banner_2_item">
 						<div class="container fill_height">
@@ -1419,7 +1384,6 @@
 					</div>
 				</div>
 
-				<!-- Banner 2 Slider Item -->
 				<div class="owl-item">
 					<div class="banner_2_item">
 						<div class="container fill_height">
@@ -1447,7 +1411,7 @@
 			</div>
 		</div>
 	</div>
-
+ -->
 	<!-- Hot New Arrivals -->
 
 	<div class="new_arrivals">
